@@ -42,11 +42,12 @@ $screen-xl-max: 1399px;
 body {
     max-width: 1440px;
     margin: 0;
+    outline: 1px solid red;
 }
 // === / normalize ===
 // === global ===
 .section-outer {
-    max-width: 1440px;
+    max-width: 100%;
 
     @media (max-width: $screen-xxl) {
         max-width: $screen-xxl;
@@ -220,6 +221,9 @@ body {
             @media (max-width: 1060px) {
                 margin: 103px 0 0;
             }
+            @media (max-width: 599px) {
+                width: 40.486111111111114vw;
+            }
         }
     }
 }
@@ -272,15 +276,25 @@ body {
 
     &__block {
         display: flex;
+        @media (max-width: 980px) {
+            flex-direction: column;
+        }
 
         &-content {
             display: flex;
             flex-direction: column;
             justify-content: center;
             margin: 0 119px 0 0;
+            
+            @media (max-width: 980px) {
+                margin: 0;
+            }
 
             &:last-child {
                 margin: 0 0 0 93px;
+                @media (max-width: 980px) {
+                    margin: 0;
+                }
             }
 
             &-title {
@@ -288,6 +302,9 @@ body {
 
                 margin: 0;
                 font-size: 38px;
+                @media (max-width: 980px) {
+                    margin-top: 20px;
+                }
             }
 
             &-subtitle {
@@ -333,6 +350,10 @@ body {
         &-dates {
             display: flex;
             margin-bottom: 112px;
+            @media (max-width: 846px) {
+                flex-direction: column;
+                align-items: center;
+            }
 
             &-date {
                 display: flex;
@@ -386,6 +407,10 @@ body {
             left: 85.90277777777777%;
         }
     }
+}
+
+.section-inner_results {
+    max-width: 100%;
 }
 // === / results===
 // === course ===
@@ -481,6 +506,10 @@ body {
             &-blocks {
                 display: flex;
                 align-items: flex-start;
+                @media (max-width: 544px) {
+                    flex-direction: column;
+                    align-items: center;
+                }
 
                 &:last-child {
                     margin-top: 54.75px;
@@ -634,6 +663,9 @@ body {
     &__content {
         display: flex;
         margin: 0;
+        @media (max-width: 917px) {
+            flex-direction: column;
+        }
 
         &-block {
             width: 430px;
@@ -641,10 +673,13 @@ body {
             flex-direction: column;
             align-items: center;
             background-color: #fff;
-            
+
             &:first-child {
                 margin: 0 40px 0 0;
                 height: 572px;
+                @media (max-width: 917px) {
+                    margin: 0 0 88px;
+                }
             }
 
             &-img {
@@ -665,6 +700,7 @@ body {
                 margin: 0;
 
                 &-price {
+                    @include Inter-Regular();
                     margin: 0;
                     font-size: 31px;
                     color: $three-brand-color;
@@ -747,6 +783,10 @@ body {
 
     &__content {
         display: flex;
+
+        @media (max-width: 1016px) {
+            flex-direction: column;
+        }
         
         &-comments {
             display: flex;
@@ -769,6 +809,9 @@ body {
                 
                 &:not(:last-child) {
                     margin-right: 32px;
+                    @media (max-width: 964px) {
+                        margin-right: 0;
+                    }
                 }
 
                 &-img {
@@ -777,6 +820,15 @@ body {
     
                 &-text {
                     margin: 26.89px 0 14px 32px;
+                    @media (max-width: $screen-ld-max) {
+                        font-size: 15px;
+                    }
+                    @media (max-width: 1121px) {
+                        font-size: 14px;
+                    }
+                    @media (max-width: 1060px) {
+                        font-size: 13px;
+                    }
                 }
                 
                 &-user {
@@ -840,10 +892,17 @@ body {
     &__menu {
         display: flex;
         margin-left: 415px;
+        @media (max-width: 819px) {
+            margin: 0;
+        }
 
         &-list {
             list-style: none;
-            
+
+            &:first-child {
+                padding: 0;
+            }
+
             &-item {
 
                 &_title {
@@ -857,6 +916,11 @@ body {
 .section-inner_footer {
     display: flex;
     justify-content: space-between;
-    padding: 69px 196px 69.85px 155px;
+    padding: 69px 0.13541666666666666vw 69.85px 0.1076388888888889vw;
+    @media (max-width: 819px) {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
 }
 // === / footer ===
